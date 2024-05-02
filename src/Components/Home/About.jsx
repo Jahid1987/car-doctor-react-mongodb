@@ -4,13 +4,16 @@ import Button from "../Button";
 const About = () => {
   return (
     <div className="hero bg-base-100 my-10">
-      <div className="flex gap-6 flex-col lg:flex-row">
+      <div className="flex gap-6 flex-col md:flex-row">
         <div className="w-1/2 relative">
-          <img src={person} className="w-3/4 rounded-lg top-0 left-0" />
+          <img
+            src={person}
+            className=" w-full md:w-3/4 rounded-lg top-0 left-0"
+          />
           <img
             src={parts}
             alt=""
-            className="absolute w-2/4 bottom-0 border-8 border-white rounded-lg right-0"
+            className="absolute w-full md:w-2/4 bottom-0 border-8 border-white rounded-lg right-0"
           />
         </div>
         <div className="w-1/2">
