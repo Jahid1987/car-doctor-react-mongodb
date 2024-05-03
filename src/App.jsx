@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Nav />
-      <div className="min-h-[calc(100vh-400px)] max-w-[1140px] mx-auto px-2 lg:px">
+      <div className="min-h-[calc(100vh-300px)] max-w-[1140px] mx-auto px-2 lg:px">
         <Outlet />
       </div>
       <Footer />

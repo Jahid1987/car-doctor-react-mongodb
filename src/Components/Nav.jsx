@@ -1,8 +1,16 @@
 import { NavLink } from "react-router-dom";
 import ButtonOutline from "./ButtonOutline";
 import logoImg from "../assets/logo.svg";
+import useAuth from "../CustomHooks/useAuth";
 
 const Nav = () => {
+  const { signOutUser, user } = useAuth();
+
+  async function handleLogOut() {
+    await signOutUser();
+    console.log(user);
+  }
+
   const links = (
     <>
       <li>
@@ -15,10 +23,15 @@ const Nav = () => {
         <NavLink to="/services">Services</NavLink>
       </li>
       <li>
-        <NavLink to="/blog">Blog</NavLink>
+        <NavLink to="/bookings">Bookings</NavLink>
       </li>
       <li>
         <NavLink to="/cantact">Contact</NavLink>
+      </li>
+      <li>
+        <button onClick={handleLogOut} className="btn btn-link">
+          Log Out
+        </button>
       </li>
     </>
   );

@@ -2,6 +2,7 @@ import Button from "../Components/Button";
 import sideImg from "../assets/images/login/login.svg";
 import useAuth from "../CustomHooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const { userSignIn } = useAuth();
@@ -14,8 +15,16 @@ const Login = () => {
     const email = form.email.value;
     const pass = form.password.value;
     try {
-      await userSignIn(email, pass);
-      navigate(`${location.state || "/"}`);
+      const data = await userSignIn(email, pass);
+      const userEmail = { email: data.user.email };
+      // console.log(userEmail);
+      axios
+        .post("http://localhost:5000/jwt", userEmail, { withCredentials: true })
+        .then((res) => {
+          if (res.data.success) {
+            navigate(`${location.state || "/"}`);
+          }
+        });
     } catch (err) {
       console.error(err);
     }

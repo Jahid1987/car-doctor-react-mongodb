@@ -5,7 +5,6 @@ const PrivateRouter = ({ children }) => {
   const { user, isLoading } = useAuth();
 
   const location = useLocation();
-  console.log(location);
 
   if (isLoading) {
     return <p>Loading ...</p>;
