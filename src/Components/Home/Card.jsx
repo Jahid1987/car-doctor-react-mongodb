@@ -33,7 +33,7 @@ const Card = ({ service }) => {
         <h2 className="card-title">{title}</h2>
         <p className="flex justify-between text-red-400 font-bold">
           <span>Price: {price}</span>
-          <Link to={`/services/${_id}`}>
+          <Link to={`/service/${_id}`}>
             <svg
               // onClick={handleAddToBook}
               xmlns="http://www.w3.org/2000/svg"

@@ -11,7 +11,7 @@ const Services = () => {
     >
       <h2 className="font-bold text-2xl">Services</h2>
       <div
-        className={`bg-[#FF3811] mb-4 text-white text-base font-semibold p-3 rounded-lg flex justify-between items-center`}
+        className={`bg-[#FF3811] my-4 text-white text-base font-semibold p-3 rounded-lg flex justify-between items-center`}
       >
         <p>Full Car Repair</p>
         <svg
