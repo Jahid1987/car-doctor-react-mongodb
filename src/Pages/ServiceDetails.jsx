@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Services from "../Components/ServiceDetails/Services";
 import Download from "../Components/ServiceDetails/Download";
@@ -28,7 +28,7 @@ const ServiceDetails = () => {
           <div className="space-y-3 mt-3">
             <h3 className="text-3xl font-bold">{service.title}</h3>
             <p className="text-[#737373]">{service.description}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid place-items-center grid-cols-1 md:grid-cols-2 gap-3">
               {service.facility.map((item, index) => (
                 <Facility key={index} facility={item} />
               ))}
@@ -39,7 +39,7 @@ const ServiceDetails = () => {
           <div className="mt-5 space-y-3">
             <h3 className="text-3xl font-bold">3 Simple Steps to Process</h3>
             <p className="text-[#737373]">{service.description}</p>
-            <div className="grid grid-cols-1 justify-around md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-3">
               <ProcessStep step={{ num: "01", txt: "ONE" }} />
               <ProcessStep step={{ num: "02", txt: "TWO" }} />
               <ProcessStep step={{ num: "03", txt: "THREE" }} />
@@ -89,9 +89,11 @@ const ServiceDetails = () => {
           <p className="text-3xl my-3 font-bold text-[#151515]">
             Price ${service.price}
           </p>
-          <button className="btn btn-sm md:btn-md w-full bg-[#FF3811] text-white hover:bg-[#cf2d0d]">
-            Proceed Checkout
-          </button>
+          <Link to={`/checkout/${service._id}`}>
+            <button className="btn btn-sm md:btn-md w-full bg-[#FF3811] text-white hover:bg-[#cf2d0d]">
+              Proceed Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </main>

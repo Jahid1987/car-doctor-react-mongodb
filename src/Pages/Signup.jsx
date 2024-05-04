@@ -19,9 +19,9 @@ const Signup = () => {
     }
   }
   return (
-    <div className="hero  bg-base-100 my-5">
+    <div className="hero bg-base-100 my-5">
       <div className="hero-content flex-col lg:flex-row">
-        <div className="text-center lg:text-left">
+        <div className="max-w-[400px]">
           <img src={sideImg} alt="register image" />
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
