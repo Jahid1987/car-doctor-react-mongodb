@@ -4,11 +4,10 @@ import logoImg from "../assets/logo.svg";
 import useAuth from "../CustomHooks/useAuth";
 
 const Nav = () => {
-  const { signOutUser, user } = useAuth();
+  const { signOutUser } = useAuth();
 
   async function handleLogOut() {
     await signOutUser();
-    console.log(user);
   }
 
   const links = (

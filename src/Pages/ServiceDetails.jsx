@@ -8,8 +8,6 @@ import ProcessStep from "../Components/ServiceDetails/ProcessStep";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-
-  console.log(service);
   return (
     <main>
       <Banner page="Service Details" />
